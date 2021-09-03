@@ -178,13 +178,15 @@ SITE_DOMAIN = 'uknews.herokuapp.com'
 
 
 # Celery Config.
-# CELERY_BROKER_URL = 'redis://127.0.0.1:6379'
-# CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379'
+REDIS_TLS_URL = 'rediss://:pee1b408c7d288dca1d579a7c35cf1d35faaf546857dd8c75512ed9b1abd5fc7b@ec2-3-214-185-114.compute-1.amazonaws.com:27100'
+REDIS_URL = 'redis://:pee1b408c7d288dca1d579a7c35cf1d35faaf546857dd8c75512ed9b1abd5fc7b@ec2-3-214-185-114.compute-1.amazonaws.com:27099'
+CELERY_BROKER_URL = REDIS_URL
+CELERY_RESULT_BACKEND = REDIS_URL
 
-# CELERY_ACCEPT_CONTENT = ['application/json']
-# CELERY_TASK_SERIALIZER = 'json'
-# CELERY_RESULT_SERIALIZER = 'json'
-# CELERY_TIMEZONE = TIME_ZONE
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = TIME_ZONE
 
 # heroku config
 django_heroku.settings(locals())
