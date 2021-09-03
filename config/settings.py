@@ -24,13 +24,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY',default="fOqtAorZrVqWYbuMPOcZnTzw2D5bKeHGpXUwCaNBnvFUmO1njCQZGz05x1BhDG0E")
+SECRET_KEY = 'django-insecure-%wpod#qmq6uvmxpwd(e*@hkw^9394dzhhpc&t0_b9_!m8lik$u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG',cast=bool)
 
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS',default=['*','uknews.herokuapp.com'])
+ALLOWED_HOSTS = ['uknews.herokuapp.com']
+
+
+DEBUG = False
+
 
 
 # Application definition
@@ -162,16 +165,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Email Config.
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = config('EMAIL_HOST')
-EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
-EMAIL_PORT = config('EMAIL_PORT', cast=int)
-EMAIL_USE_TLS = config('EMAIL_USE_TLS',cast=bool)
-DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'edd.edwardmike@gmail.com'
+EMAIL_HOST_PASSWORD = 'xzulhnorwpasexwa'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'edd.edwardmike@gmail.com'
 
 
-SITE_DOMAIN = config('SITE_DOMAIN')
+SITE_DOMAIN = 'uknews.herokuapp.com'
+
 
 
 # Celery Config.
