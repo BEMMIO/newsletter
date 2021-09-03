@@ -1,0 +1,21 @@
+{% extends 'subscribe/_layout.html' %}
+
+
+
+{% block content %}
+  
+
+<div class="container">
+	<section class="row">
+		<section class="col col-lg-12 col-md-12 col-sm-12">
+			<h4>Celery & Sendgrid Powered Newsletter</h4>
+		</section>
+		<form action="." method="post">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<button type="submit">Subscribe</button>
+		</form>
+	</section>
+</div>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+celery = "*"
+psycopg2 = "*"
+python-decouple = "*"
+redis = "==3.5.3"
+django-sendgrid-v5 = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
