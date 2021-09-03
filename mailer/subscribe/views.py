@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 
 from . import forms
 # Create your views here.
-from .tasks import test_celery_func,send_email
+# from .tasks import test_celery_func,send_email
 
 def subscribe_for_newsletter(request,template='subscribe/index.html',*args,**kwargs):
 
@@ -17,7 +17,7 @@ def subscribe_for_newsletter(request,template='subscribe/index.html',*args,**kwa
 			email = request.POST.get('email',None)
 
 			# celery email 
-			send_email.delay(email)
+			# send_email.delay(email)
 			return redirect('subscribe:subscribe-for-newsletter')
 		else:
 			pass
