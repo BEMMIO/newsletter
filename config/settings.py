@@ -30,7 +30,7 @@ SECRET_KEY = config('SECRET_KEY',default="fOqtAorZrVqWYbuMPOcZnTzw2D5bKeHGpXUwCa
 DEBUG = config('DEBUG',cast=bool)
 
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')])
+ALLOWED_HOSTS = config('ALLOWED_HOSTS',default=['*','uknews.herokuapp.com'])
 
 
 # Application definition
