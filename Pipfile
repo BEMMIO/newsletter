@@ -10,6 +10,9 @@ psycopg2 = "*"
 python-decouple = "*"
 redis = "==3.5.3"
 django-sendgrid-v5 = "*"
+heroku = "*"
+gunicorn = "*"
+django-heroku = "*"
 
 [dev-packages]
 
