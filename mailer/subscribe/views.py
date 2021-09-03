@@ -14,6 +14,7 @@ def subscribe_for_newsletter(request,template='subscribe/index.html',*args,**kwa
 	if request.method == "POST":
 		form = forms.SubscribeForm(data = request.POST)
 		if form.is_valid():
+			form.save()
 			email = request.POST.get('email',None)
 
 			# celery email 
