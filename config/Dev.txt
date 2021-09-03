@@ -1,0 +1,6 @@
+https://docs.djangoproject.com/en/dev/topics/auth/passwords/#using-argon2-with-django
+1.#upgrade django password hashes
+
+2.#create custom user model (for every project)
+
+3.#

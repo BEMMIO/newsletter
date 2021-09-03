@@ -7,7 +7,7 @@ https://www.youtube.com/watch?v=G-MtZan4kis&t=2s
 & stackoverflow
 
 https://devcenter.heroku.com/articles (KEY articles can be found here)
-
+https://devcenter.heroku.com/articles/heroku-postgresql
 
 
 

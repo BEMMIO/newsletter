@@ -15,10 +15,11 @@ def subscribe_for_newsletter(request,template='subscribe/index.html',*args,**kwa
 		form = forms.SubscribeForm(data = request.POST)
 		if form.is_valid():
 			form.save()
-			email = request.POST.get('email',None)
-
-			# celery email 
-			send_email.delay(email)
+			# if request.POST['email'] is assigned to email var
+			if email := request.POST.get('email',None):
+				# then do this w/ email
+				# celery email 
+				send_email.delay(email)
 			return redirect('subscribe:subscribe-for-newsletter')
 		else:
 			pass

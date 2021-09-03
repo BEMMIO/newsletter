@@ -86,10 +86,47 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+# Try to connect to live database for a development project (continous development & deployment)
+'''
+> from heroku cli, type:
+
+    heroku pg:credentials:url
+                    OR 
+        
+    click on your database on heroku & go to
+    https://data.heroku.com/datastores/8735f520-60fc-4dbe-9f90-a17a8338d53a#administration
+
+Host : ec2-44-198-80-194.compute-1.amazonaws.com (<HOST>)
+Database : d4ce8nnrmblv7m (<DATABASE_NAME>)
+User : flyukiacpdacsg (<USER>)
+Port : 5432 (<PORT>)
+Password : 3b3124eae94d877956fe06cebb6679aed27a22be37b7b1b25ee972dbaab9f8af (<PASSWORD>)
+URI : postgres://flyukiacpdacsg:3b3124eae94d877956fe06cebb6679aed27a22be37b7b1b25ee972dbaab9f8af@ec2-44-198-80-194.compute-1.amazonaws.com:5432/d4ce8nnrmblv7m
+Heroku CLI : heroku pg:psql postgresql-graceful-17657 --app uknews
+
+
+output:
+
+"dbname=d4ce8nnrmblv7m host=ec2-44-198-80-194.compute-1.amazonaws.com port=5432 user=flyukiacpdacsg password=3b3124eae94d877956fe06cebb6679aed27a22be37b7b1b25ee972dbaab9f8af sslmode=require"
+Connection URL:
+   postgres://flyukiacpdacsg:3b3124eae94d877956fe06cebb6679aed27a22be37b7b1b25ee972dbaab9f8af@ec2-44-198-80-194.compute-1.amazonaws.com:5432/d4ce8nnrmblv7m
+
+'''
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd4ce8nnrmblv7m',
+        'USER': 'flyukiacpdacsg',
+        'PASSWORD': '3b3124eae94d877956fe06cebb6679aed27a22be37b7b1b25ee972dbaab9f8af',
+        'HOST': 'ec2-44-198-80-194.compute-1.amazonaws.com',
+        'PORT': 5432,
     }
 }
 
